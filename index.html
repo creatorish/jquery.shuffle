@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	pre {
+		background: #efefef;
+		padding: 10px;
+		line-height: 1.5;
+	}
+	h2 {
+		margin-top: 30px;
+	}
+	#footer {
+		font-size: 10px;
+		margin-top: 30px;
+	}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28381001-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<h1>jQuery Shuffle Text Demo</h1>
+<h2>ID指定</h2>
+<p>指定したIDの要素だけシャッフルします</p>
+<pre><code>var shuffle = $("#test").shuffleText();
+shuffle.start();</code></pre>
+<h3>Demo</h3>
+<div id="test">Dummy Text.Dummy Text.Dummy Text.</div>
+<h2>Class指定</h2>
+<p>Class指定したすべての要素を同時にシャッフルします</p>
+<pre><code>var shuffle = $(".test").shuffleText();
+shuffle.start();</code></pre>
+<h3>Demo</h3>
+<div class="test">Dummy Text.Dummy Text.Dummy Text.</div>
+<div class="test">Dummy Text.Dummy Text.Dummy Text.</div>
+
+<h2>Class指定で個別シャッフル</h2>
+<p>Class指定でシャッフルイベントをまとめて付けるけど、シャッフルは個別に行います</p>
+<pre><code>var shuffle = $(".test").shuffleText();
+shuffle.start(jQueryObject);</code></pre>
+<h3>Demo</h3>
+<div class="test2">Dummy Text.Dummy Text.Dummy Text.</div>
+<div class="test2">Dummy Text.Dummy Text.Dummy Text.</div>
+<div class="test2">Dummy Text.Dummy Text.Dummy Text.</div>
+<div id="footer">Copyright(c) <a href="http://creatorish.com">creatorish.com</a></div>
+
+<script src="jquery.js"></script>
+<script src="ShuffleText.js"></script>
+<script src="jquery.suffletext.js"></script>
+<script>
+	var shuffle = $(".test").shuffleText();
+	var shuffle2 = $("#test").shuffleText();
+	var shuffle3 = $(".test2").shuffleText();
+	
+	$(".test").mouseover(function() {
+		shuffle.start();
+	});
+	$("#test").mouseover(function() {
+		shuffle2.start();
+	});
+	$(".test2").mouseover(function() {
+		shuffle3.start(this);
+	});
+</script>
+</body>
+</html>
